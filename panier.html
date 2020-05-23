@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class= "bg-dark ">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark  ">
+                    <a class="navbar-brand " href="index.html">ORINOCO</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item  ">
+                          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        
+                        <li class="nav-item dropdown ">
+                          <a class="nav-link dropdown-toggle" href="panier.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Produits
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="personaliser.html">Teddy1</a>
+                            <a class="dropdown-item" href="personaliser.html">Teddy2</a>
+                            <a class="dropdown-item" href="personaliser.html">Teddy3</a>
+                            <a class="dropdown-item" href="personaliser.html">Teddy4</a>
+                            <a class="dropdown-item" href="personaliser.html">Teddy5</a>
+                            
+                          </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="panier.html">Panier</a>
+                          </li>
+                       
+                      </ul>
+                      
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    </div>
+    <div class="container-fluid">
+        
+        <div class="row justify-content-center my-5">
+            <h2>Votre Panier</h2>
+        </div>
+        <table class="table col-8 m-auto mb-5">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Quantite</th>
+                <th scope="col">Couleur</th>
+                <th scope="col">Prix unitaire</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Pierre</th>
+                <td>2</td>
+                <td>vert</td>
+                <td>50 euros</td>
+                <td>50 euros</td>
+              </tr>
+              <tr>
+                <th scope="row">Paul</th>
+                <td>1</td>
+                <td>jaune</td>
+                <td>69 euros</td>
+                <td>69 euros</td>
+              </tr>
+              <tr>
+                <th scope="row">Jack</th>
+                <td>3</td>
+                <td>vert</td>
+                <td>30 euros</td>
+                <td>90 euros</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        <form class="col-11 mx-auto my-5">
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer01">Prenom</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" required>
+                <div class="valid-feedback">
+                  C'est quoi ton petit nom?
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Nom</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" required>
+                <div class="valid-feedback">
+                  Et celui de tes ancetres?
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer03">Ville</label>
+                <input type="text" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                  Le nom de ton patlin stp
+                </div>
+              </div>
+              
+              <div class="col-md-3 mb-3">
+                <label for="validationServer05">Code postale</label>
+                <input type="text" class="form-control is-invalid" id="validationServer05" required>
+                <div class="invalid-feedback">
+                  Allez envoi ton code postale.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="validationServer05">Pays</label>
+                <input type="text" class="form-control is-invalid" id="validationServer05" required>
+                <div class="invalid-feedback">
+                  Quel pays au fait?
+                </div>
+              </div>
+              
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input type="text" class="form-control rounded-right" required>
+                <div class="invalid-feedback">
+                  <!--Please choose a username.-->
+                  On t'enverra plein de mail
+                </div>
+              </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  coche mon petit
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Paye ton ours</button>
+          </form>
+       
+        <footer class="row ">
+      
+   
+        </footer>
+    
+    
+
+    
+    
+        
+    
+    
+    <script type="text/javascript" src=tuto.js></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
