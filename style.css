@@ -1,5 +1,23 @@
+
 h1{
-    display: flex;
-    justify-content: center;
-    margin-top: 15rem;
+    position: absolute;
+    right: 48vw;
+    bottom: 47vw;
+    font-size: 6vw;
+    font-family: 'Chelsea Market', cursive;
+    font-weight: bold;
+    
+}
+h2{
+    font-family: 'Chelsea Market', cursive;
+    font-size: 1.5rem;
+    
+    
+}
+#bck-image{
+    position: relative;
+}
+@media (min-width: 768px) { 
+    h2{
+    font-size: 2rem;}
 }

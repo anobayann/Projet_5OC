@@ -24,7 +24,7 @@ POST /order Requête JSON contenant un objet de contact et un Retourne l'objet c
 
 */
 
-const infos = document.getElementById('demo');
+
 
 
 let httpRequest = new XMLHttpRequest(); // On cree un objet XMLHttpRequest ()
@@ -69,3 +69,5 @@ httpRequest.send (); //On envoi la requete car methode GET, (null par default)
     
 
   
+
+
