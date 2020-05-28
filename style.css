@@ -1,23 +1,27 @@
 
-h1{
+.titre-page1{
     position: absolute;
     right: 48vw;
     bottom: 47vw;
     font-size: 6vw;
     font-family: 'Chelsea Market', cursive;
     font-weight: bold;
+    opacity: 0.6;
     
 }
-h2{
+.sous-titre{
     font-family: 'Chelsea Market', cursive;
-    font-size: 1.5rem;
-    
-    
+    font-size: 1.2rem;   
 }
 #bck-image{
     position: relative;
 }
+.orinoco:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
 @media (min-width: 768px) { 
-    h2{
+    .sous-titre{
     font-size: 2rem;}
+  
 }
