@@ -1,5 +1,5 @@
 
-const getTeddies = async function (){
+/*const getTeddies = async function (){
     try{
         let response = await fetch('http://localhost:3000/api/teddies')
         if (response.ok) {
@@ -13,7 +13,8 @@ const getTeddies = async function (){
     }
 }
 
-getTeddies ()
+getTeddies () */
+
 
  
  

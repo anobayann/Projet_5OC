@@ -38,8 +38,15 @@ httpRequest.onreadystatechange = function (){ // instructions de traitement de l
                                                                     // 200 indique que tout s'est bien passé
        //demo.innerHTML = JSON.stringify(this.response);
         var data = this.response;
+        const machin = document.querySelectorAll('h5')
+        
+        for (let i = 0; i <= data.length; i++){
+            machin.textContent = data.name[i];
+        }
+           
+    
        
-        console.log(data);
+        //console.log(data);
         //for (let i = 0; i < data.length; i++){
             
 //}
@@ -66,8 +73,4 @@ httpRequest.responseType = "json"; // On demande reponse au format json
 
 httpRequest.send (); //On envoi la requete car methode GET, (null par default)
 
-    
-
-  
-
-
+ 
