@@ -1,4 +1,7 @@
 // https://www.youtube.com/watch?v=sGvEqHkDyFc
+// https://leblogducodeur.fr/fetch-javascript/
+
+//les const pour ensuite remplacer textes ou images
 
 const img1 = document.getElementById('ours1')
 const img2 = document.getElementById('ours2')
@@ -20,12 +23,12 @@ const price5 = document.getElementById('oursprice5')
 
 
 
-fetch('http://localhost:3000/api/teddies')
-    .then(res =>  {
+fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et inclus les promesses
+    .then(res =>  { //la méthode then() retourne automatiquement une nouvelle promesse et res = response
         
-        if (res.ok){
-            res.json().then(data =>{
-                img1.src = data[0].imageUrl
+        if (res.ok){  // si le reponse est ok donc 
+            res.json().then(data =>{ //on traduit la reponse avec json puis nouvelle promesse pour recuper elemts de reponse 
+                img1.src = data[0].imageUrl // ou ecrire reponse.(src pr img et innerhtml pr texr = oursnumber.quelpropriete)
                 img2.src = data[1].imageUrl
                 img3.src = data[2].imageUrl
                 img4.src = data[3].imageUrl
@@ -35,14 +38,14 @@ fetch('http://localhost:3000/api/teddies')
                 name3.innerHTML = data[2].name
                 name4.innerHTML = data[3].name
                 name5.innerHTML = data[4].name
-                price1.innerHTML = data[0].price +" php"
-                price2.innerHTML = data[1].price +" php"
-                price3.innerHTML = data[2].price +" php"
-                price4.innerHTML = data[3].price +" php"
-                price5.innerHTML = data[4].price +" php"
+                price1.innerHTML = data[0].price +" pesos"
+                price2.innerHTML = data[1].price +" pesos"
+                price3.innerHTML = data[2].price +" pesos"
+                price4.innerHTML = data[3].price +" pesos"
+                price5.innerHTML = data[4].price +" pesos"
                 
             })}
-        else {
+        else { // sinon on efface les cards.. et on ecrit un message d'erreur a la place
            
            const parent = document.getElementById('menu')
            const parent2 = document.getElementById('menu2')
@@ -52,5 +55,4 @@ fetch('http://localhost:3000/api/teddies')
            parent3.innerHTML ="";
         }
     })
-
-
+ 
