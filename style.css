@@ -26,6 +26,9 @@
 .card-img-top{
     margin-top: 1rem;
 }
+.thead{
+    background-color: #17a2b8;
+}
 @media (min-width: 768px) { 
     .sous-titre{
     font-size: 2rem;}

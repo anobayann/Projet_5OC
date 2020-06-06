@@ -60,6 +60,8 @@
                     tddycolor3.innerHTML = data[1].colors[2]
                     tddycolor4.remove()
 
+                    
+
                    }
                    else if (document.URL.indexOf("personaliser.html?_lenny-and-carl") >= 0){
                     tddyname.innerHTML = '<strong>NOM</strong>: ' + data[2].name
