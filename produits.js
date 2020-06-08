@@ -6,7 +6,7 @@
 
         
 
-       const tddyname = document.getElementById('tdyname')
+       const tddyname = document.querySelector('#tdyname')
        const tddydesc = document.querySelector('#tdydesc')
        const tddyprice = document.querySelector('#tdyprice')
        const tddypic = document.querySelector('#tdypic')
@@ -16,11 +16,7 @@
        const tddycolor4 = document.querySelector('#color4')
        const coloors = document.querySelector('#coloors')
        const erreur = document.querySelector('.card')
-
-       
-       
-
-       
+       const buttun = document.querySelector('#btn')
 
         fetch('http://localhost:3000/api/teddies')
         .then(res =>  {
@@ -32,24 +28,28 @@
 
                    if (document.URL.indexOf("personaliser.html?_norbert") >= 0){ // si array 0 premier 1 2eme.. -1 pas present
                    
+                    
                     tddyname.innerHTML = '<strong>NOM</strong>: ' + data[0].name
                     tddydesc.innerHTML = '<strong>DESCRIPTION</strong>: ' + data[0].description
                     tddyprice.innerHTML = '<strong>PRIX</strong>: ' + data[0].price +" pesos"
                     tddypic.src = data[0].imageUrl
 
-                   tddycolor1.innerHTML = data[0].colors[0]
-                   tddycolor2.innerHTML = data[0].colors[1]
-                   tddycolor3.innerHTML = data[0].colors[2]
-                   tddycolor4.innerHTML = data[0].colors[3]
+                    tddycolor1.innerHTML = data[0].colors[0]
+                    tddycolor2.innerHTML = data[0].colors[1]
+                    tddycolor3.innerHTML = data[0].colors[2]
+                    tddycolor4.innerHTML = data[0].colors[3]
+                                                
+                    
+                    buttun.addEventListener("click", function() {
+                            localStorage.setItem("name", JSON.stringify(data[0].name))
+                            localStorage.setItem("price", JSON.stringify(data[0].price))
+
+
+                    })
                    
-                   
-
-
-
-
-
                    }
                    else if (document.URL.indexOf("personaliser.html?_arnold") >= 0){
+
                     tddyname.innerHTML = '<strong>NOM</strong>: ' + data[1].name
                     tddydesc.innerHTML = '<strong>DESCRIPTION</strong>: ' + data[1].description
                     tddyprice.innerHTML = '<strong>PRIX</strong>: ' + data[1].price +" pesos"
@@ -60,9 +60,13 @@
                     tddycolor3.innerHTML = data[1].colors[2]
                     tddycolor4.remove()
 
-                    
+                    buttun.addEventListener("click", function() {
+                        localStorage.setItem("name", JSON.stringify(data[1].name))
+                        localStorage.setItem("price", JSON.stringify(data[1].price))
 
-                   }
+                    
+                   })
+                    }
                    else if (document.URL.indexOf("personaliser.html?_lenny-and-carl") >= 0){
                     tddyname.innerHTML = '<strong>NOM</strong>: ' + data[2].name
                     tddydesc.innerHTML = '<strong>DESCRIPTION</strong>: ' + data[2].description
@@ -70,11 +74,16 @@
                     tddypic.src = data[2].imageUrl
 
                     tddycolor1.innerHTML = data[2].colors[0]
-                   tddycolor2.remove()
-                   tddycolor3.remove()
-                   tddycolor4.remove()
+                    tddycolor2.remove()
+                    tddycolor3.remove()
+                    tddycolor4.remove()
 
-                   
+                    buttun.addEventListener("click", function() {
+                        localStorage.setItem("name", JSON.stringify(data[2].name))
+                        localStorage.setItem("price", JSON.stringify(data[2].price))
+
+                    
+                   })
 
            
 
@@ -91,6 +100,12 @@
                    tddycolor2.innerHTML = data[3].colors[1]
                    tddycolor3.innerHTML = data[3].colors[2]
                    tddycolor4.remove()
+
+                   buttun.addEventListener("click", function() {
+                    localStorage.setItem("name", JSON.stringify(data[3].name))
+                    localStorage.setItem("price", JSON.stringify(data[3].price))
+
+                    })
                    }
 
                    else if (document.URL.indexOf("personaliser.html?_garfunkel") >= 0){
@@ -103,6 +118,12 @@
                    tddycolor2.innerHTML = data[4].colors[1]
                    tddycolor3.innerHTML = data[4].colors[2]
                    tddycolor4.remove()
+
+                   buttun.addEventListener("click", function() {
+                    localStorage.setItem("name", JSON.stringify(data[4].name))
+                    localStorage.setItem("price", JSON.stringify(data[4].price))
+
+               })
                     }
                 
                     else {
@@ -124,3 +145,10 @@
     })
     
 
+//     function addTeddies (){
+
+//     }
+
+//     function updateStorage(cart){
+//      localStorage.setItem('cart', JSON.stringify(cart))
+//  }

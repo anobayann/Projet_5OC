@@ -53,35 +53,38 @@
     </div>
     <div class="container-fluid">
         
-        <div class="row justify-content-center my-5">
+        <div class="row justify-content-center mb-3 mb-sm-5 mt-5">
             <h2 class="sous-titre">Votre Panier</h2>
         </div>
-        <table class="table col-10 m-auto mb-5">
+        <table class="table col-12 col-md-10 m-auto mb-5 px-0" id="table">
             <thead class="thead thead-dark ">
               <tr>
-                <th scope="col">Produit</th>
-                <th scope="col">Quantite</th>
+                <th scope="col"class="text-center">Produit</th>
+                <th scope="col" class="text-center" >Quantite</th>
                 
-                <th scope="col">Prix unitaire</th>
-                <th scope="col">Total</th>
+                <th scope="col" class="text-center" >Prix unitaire</th>
+                <!-- <th scope="col" class="text-center">Total</th> -->
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row" id="panier_name">""</th>
-                <td><select class="custom-select col-9 col-lg-6 ">
+                <th scope="row" id="panier_name" class="text-center" >""</th>
+                <td class="text-center">
+                  <select class="custom-select col-9 col-lg-6  " >
                   
                   <option selected value="1" >1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
-                </select></td>
+                </select>
+              </td>
                 
-                <td id="pricefor1">0 euros</td>
-                <td>0 euros</td>
+                <td id="pricefor1" class="text-center">0 euros</td>
+                <!-- <td class="text-center">0 euros</td> -->
               </tr>
              <!--- <tr>
                 <th scope="row">Paul</th>
-                <td><select class="custom-select col-9 col-lg-6 ">
+                <td>
+                  <select class="custom-select col-9 col-lg-6 ">
                   <option selected>0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -129,29 +132,30 @@
               </tr>-->
             </tbody>
           </table>
-          <div class="row mt-5 col-8 mx-auto justify-content-between ">
-          
-          <a class="btn btn-info col-3 " href="index.html" role="button">Continuer mon shopping</a>
-          <a class="btn btn-info col-3 " href="index.html" role="button">Vider le panier</a>
-          
-          </div>
-          <div class="reow mt-5 col-9 mx-auto ">
-            <p class="col-3 border border-info rounded mb-0 py-2 mx-auto text-center">Prix total: 0 euros</p>
+           <div class="row mt-5 col-9 col-md-3 mx-auto ">
+            <p class="col border border-info rounded mb-0 py-2 mx-auto text-center">Prix total: 0 euros</p>
         
           </div>
+          <div class="row mt-5 col-md-8 mx-auto justify-content-between ">
+          
+          <a class="btn btn-info col-sm-5 col-lg-3 mb-4   " href="index.html" role="button">Continuer mon shopping</a>
+          <a class="btn btn-info  col-sm-5 col-lg-3 mb-4  " href="index.html" role="button">Vider le panier</a>
+          
+          </div>
+         
 
         <form class="col-10 mx-auto my-5">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationServer01">Prenom</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" required>
+                <input type="text" class="form-control " id="validationServer01" required>
                 <div class="valid-feedback">
                   C'est quoi ton petit nom?
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationServer02">Nom</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" required>
+                <input type="text" class="form-control" id="validationServer02" required>
                 <div class="valid-feedback">
                   Et celui de tes ancetres?
                 </div>
@@ -160,14 +164,14 @@
             <div class="form-row">
               <div class="col-12 mb-3">
                 <label for="validationServer03">Adresse</label>
-                <input type="text" class="form-control is-invalid" id="validationServer06" required>
+                <input type="text" class="form-control " id="validationServer06" required>
                 <div class="invalid-feedback">
                   elle est ou ta maison?
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationServer03">Ville</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" required>
+                <input type="text" class="form-control " id="validationServer03" required>
                 <div class="invalid-feedback">
                   Le nom de ton patlin stp
                 </div>
@@ -175,14 +179,14 @@
               
               <div class="col-md-3 mb-3">
                 <label for="validationServer05">Code postale</label>
-                <input type="text" class="form-control is-invalid" id="validationServer04" required>
+                <input type="number" class="form-control " id="validationServer04" required>
                 <div class="invalid-feedback">
                   Allez envoi ton code postale.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="validationServer05">Pays</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" required>
+                <input type="text" class="form-control " id="validationServer05" required>
                 <div class="invalid-feedback">
                   Quel pays au fait?
                 </div>
@@ -193,7 +197,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input type="text" class="form-control rounded-right" required>
+                <input type="email" class="form-control rounded-right" required>
                 <div class="invalid-feedback">
                   <!--Please choose a username.-->
                   On t'enverra plein de mail
@@ -201,9 +205,9 @@
               </div>
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" required>
                 <label class="form-check-label" for="invalidCheck3">
-                  Agree to terms and conditions
+                  accepter les termes et conditions
                 </label>
                 <div class="invalid-feedback">
                   coche mon petit

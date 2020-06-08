@@ -23,6 +23,7 @@ const price5 = document.getElementById('oursprice5')
 
 
 
+
 fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et inclus les promesses
     .then(res =>  { //la méthode then() retourne automatiquement une nouvelle promesse et res = response
         
@@ -47,6 +48,7 @@ fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et
             })}
         else { // sinon on efface les cards.. et on ecrit un message d'erreur a la place
            
+            
            const parent = document.getElementById('menu')
            const parent2 = document.getElementById('menu2')
            const parent3 = document.getElementById('menu3')
@@ -55,4 +57,13 @@ fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et
            parent3.innerHTML ="";
         }
     })
+    .catch(err => {
+            const parent = document.getElementById('menu')
+           const parent2 = document.getElementById('menu2')
+           const parent3 = document.getElementById('menu3')
+           parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+           parent2.innerHTML ="";
+           parent3.innerHTML ="";
+        }
+    )
  
