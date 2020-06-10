@@ -57,13 +57,13 @@ fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et
            parent3.innerHTML ="";
         }
     })
-    .catch(err => {
-            const parent = document.getElementById('menu')
-           const parent2 = document.getElementById('menu2')
-           const parent3 = document.getElementById('menu3')
-           parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
-           parent2.innerHTML ="";
-           parent3.innerHTML ="";
-        }
-    )
+    // .catch(err => {
+    //         const parent = document.getElementById('menu')
+    //        const parent2 = document.getElementById('menu2')
+    //        const parent3 = document.getElementById('menu3')
+    //        parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+    //        parent2.innerHTML ="";
+    //        parent3.innerHTML ="";
+    //     }
+    // )
  
