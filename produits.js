@@ -338,14 +338,14 @@ const buttun = document.querySelector('#btn')
 
 
 function personnaliser(nounours) {
- tddyname.innerHTML = '<strong>NOM</strong>: ' + nounours.name
- tddydesc.innerHTML = '<strong>DESCRIPTION</strong>: ' + nounours.description
- tddyprice.innerHTML = '<strong>PRIX</strong>: ' + nounours.price +" pesos"
- tddypic.src = nounours.imageUrl
- tddycolor1.innerHTML = nounours.colors[0]
- tddycolor2.remove()
- tddycolor3.remove()
- tddycolor4.remove()
+     tddyname.innerHTML = '<strong>NOM</strong>: ' + nounours.name
+    tddydesc.innerHTML = '<strong>DESCRIPTION</strong>: ' + nounours.description
+    tddyprice.innerHTML = '<strong>PRIX</strong>: ' + nounours.price +" pesos"
+    tddypic.src = nounours.imageUrl
+    tddycolor1.innerHTML = nounours.colors[0]
+        tddycolor2.remove()
+        tddycolor3.remove()
+        tddycolor4.remove()
      buttun.addEventListener("click", function() {
        const posts = JSON.parse(localStorage['cart'] || "[]");
        posts.push({
@@ -357,7 +357,7 @@ function personnaliser(nounours) {
  })
 }
  fetch('http://localhost:3000/api/teddies')
- .then(res =>  {
+.then(res =>  {
      if (res.ok){
          res.json().then(data =>{
             if (document.URL.indexOf("personaliser.html?_norbert") >= 0){ // si array 0 premier 1 2eme.. -1 pas present
