@@ -1,6 +1,3 @@
-// https://www.youtube.com/watch?v=sGvEqHkDyFc
-// https://leblogducodeur.fr/fetch-javascript/
-
 //les const pour ensuite remplacer textes ou images
 
 const img1 = document.getElementById('ours1')
@@ -20,16 +17,12 @@ const price4 = document.getElementById('oursprice4')
 const price5 = document.getElementById('oursprice5')
 
 
-
-
-
-
-fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et inclus les promesses
-    .then(res =>  { //la méthode then() retourne automatiquement une nouvelle promesse et res = response
+fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle que XMLhttprequest et inclus les promesses
+    .then(res =>  {   //la méthode then() est une promesseet res = response
         
-        if (res.ok){  // si le reponse est ok donc 
-            res.json().then(data =>{ //on traduit la reponse avec json puis nouvelle promesse pour recuper elemts de reponse 
-                img1.src = data[0].imageUrl // ou ecrire reponse.(src pr img et innerhtml pr texr = oursnumber.quelpropriete)
+        if (res.ok){    // si le reponse est ok donc 
+            res.json().then(data =>{         //on traduit la reponse avec json puis nouvelle promesse pour recuper elemts de reponse 
+                img1.src = data[0].imageUrl  
                 img2.src = data[1].imageUrl
                 img3.src = data[2].imageUrl
                 img4.src = data[3].imageUrl
@@ -46,24 +39,23 @@ fetch('http://localhost:3000/api/teddies') // methode fetch car plus nouvelle et
                 price5.innerHTML = data[4].price +" pesos"
                 
             })}
-        else { // sinon on efface les cards.. et on ecrit un message d'erreur a la place
+        else { 
+           // on  recupere les 3 rows pour effacer les 2 derniers et remplacer le premier par un par une phrase
+            const parent = document.getElementById('menu')
+            const parent2 = document.getElementById('menu2')
+            const parent3 = document.getElementById('menu3')
+            parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+            parent2.innerHTML ="";
+            parent3.innerHTML ="";
            
-            
-           const parent = document.getElementById('menu')
-           const parent2 = document.getElementById('menu2')
-           const parent3 = document.getElementById('menu3')
-           parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
-           parent2.innerHTML ="";
-           parent3.innerHTML ="";
         }
     })
-    // .catch(err => {
-    //         const parent = document.getElementById('menu')
-    //        const parent2 = document.getElementById('menu2')
-    //        const parent3 = document.getElementById('menu3')
-    //        parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
-    //        parent2.innerHTML ="";
-    //        parent3.innerHTML ="";
-    //     }
-    // )
- 
+     .catch(err => {
+
+        const parent = document.getElementById('menu')
+            const parent2 = document.getElementById('menu2')
+            const parent3 = document.getElementById('menu3')
+            parent.innerHTML ="Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+            parent2.innerHTML ="";
+            parent3.innerHTML ="";
+     })

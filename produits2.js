@@ -1,3 +1,0 @@
-class Teddy {
-    constructor ()
-}
