@@ -13,7 +13,9 @@ teddyColors.push(document.querySelector('#color2')) //[1]
 teddyColors.push(document.querySelector('#color3')) //[2]
 teddyColors.push(document.querySelector('#color4')) //[3]
 
-
+function error(){
+  errorMessage.innerHTML = "Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+}
 
 
 // cree fonction pour afficher le teddy selectione dans le DOM avec ces characterisitques
@@ -37,14 +39,19 @@ function display(teddySelected) {
   
     // fonction qui envoi au local storage l'id, le nom et le prix au clic du bouton panier  
     button.addEventListener("click", function() {
-      const addTeddy = JSON.parse(localStorage['cart'] || "[]");//on recupere || cree un panier kon fou ds la constante addTeddy
-      addTeddy.push({ //on push dans un objet(le teddy avec ces caraceristik) ds l array cart 
+
+      //on recupere ou on cree la cle 'cart' du localStorage 
+      const addTeddy = JSON.parse(localStorage['cart'] || "[]");
+      addTeddy.push({ //on y push le teddy avec ces caraceristik
         _id: JSON.stringify(teddySelected._id), //3 champs de l obj
         name: JSON.stringify(teddySelected.name),
         price: JSON.stringify(teddySelected.price)
       });
-        
-        localStorage.setItem('cart', JSON.stringify(addTeddy)) // on ajoute la valeur (l objet(teddy)) a la cle(panier cart)
+        // on ajoute la valeur (l objet(teddy)) a la cle(panier cart)
+        localStorage.setItem('cart', JSON.stringify(addTeddy)) 
+
+        //JSON.stringify OBJET JS => chaine json
+        //JSON.parse chaine json => objet js
     })
 }
 
@@ -73,12 +80,23 @@ fetch('http://localhost:3000/api/teddies')
                 teddySelected = teddies[4];
                 }
                 else {
-                erreur.innerHTML = "Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+                error();
                 }
                 display(teddySelected);
-                })
+              })
       }
       else {
-      erreur.innerHTML = "Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
+      error()
       }
       })
+    .catch(err => {
+        error()
+    })
+
+
+
+
+    //PB message d'erreur trop long
+
+
+    

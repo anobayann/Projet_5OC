@@ -1,5 +1,5 @@
 // cree un row
-function makeHtml() {
+function makeRow() {
 
   // creation d une ligne du tableau qui equivaut a 
 /* <tr>
@@ -44,7 +44,7 @@ function makeHtml() {
       priceOfTeddy.classList.add('priceFor1', 'text-center')
     
     }
-makeHtml();
+makeRow();
 
 
 // Ajouter produit au panier en clonant la ligne
@@ -58,11 +58,11 @@ function addToCart(){
         const lastRow = document.querySelector("#tableMother").lastChild
         const clone = lastRow.cloneNode(true)
 
-        document.querySelector("#tableMother").appendChild(clone)
-        eachName[item].innerHTML = JSON.parse(cart[item].name)
-        eachPrice[item].innerHTML = JSON.parse(cart[item].price) + ' pesos'
+        document.querySelector("#tableMother").appendChild(clone) // on clone notre row
+        eachName[item].innerHTML = JSON.parse(cart[item].name) // on y ajoute le nom
+        eachPrice[item].innerHTML = JSON.parse(cart[item].price) + ' pesos' // on y ajoute le prix
     }
-  tableMother.removeChild(tableMother.lastChild) //on supprime la ligne cree au debut
+  tableMother.removeChild(tableMother.lastChild) //on supprime le premier row vide cree
 }
 addToCart();
 
@@ -70,20 +70,33 @@ addToCart();
 function totalPrice(){
 
   const cart = JSON.parse(localStorage.getItem('cart'))
-  const totalPrice = document.querySelector('#totalPrice')
+  let totalPrice = document.querySelector('#totalPrice')
+  let eachPrice = document.querySelectorAll(".priceFor1")
   let sum = 0
 
     for (let i in cart){
-
-        let allPrice = JSON.parse(cart[i].price) 
-        sum += allPrice
-        totalPrice.innerHTML = "Prix total = " + sum + " pesos"
+      // somme sans prendre en compte les quantites
+      let allPrice = JSON.parse(cart[i].price)
+      sum += allPrice
+      totalPrice.innerHTML = "Prix total = " + sum + " pesos"
  
-          //recupere la quantite d un produit
-          document.querySelector('.custom-select').addEventListener("change", function(e) {
-          (console.log(e.target.value))});
-      } 
+      //multiplie les quantites et le prix unitaire
+          
+      const teddyQuantity = document.querySelectorAll('.custom-select')
+      teddyQuantity[i].addEventListener("change", function(e) {
+        
+        
+        let newPrice = JSON.parse(e.target.value)*(JSON.parse(cart[i].price))
+            eachPrice[i].innerHTML = newPrice + ' pesos'  
+            
+          })         
+        //comment additionner les nouvelles quantites??? eachPrice retourne nodeliste(object)
+          console.log(JSON.stringify(eachPrice));
+          
+    }
+  
 }
+
 totalPrice();
 
 
@@ -98,6 +111,5 @@ function clearCart(){
   })
 }
 clearCart()
-
 
 

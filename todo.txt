@@ -1,0 +1,7 @@
+=> Prix total du pannier
+
+=> Prix total a la page de confirmation
+
+=>Faire REGEX au formulaire
+
+=>Faire plan test

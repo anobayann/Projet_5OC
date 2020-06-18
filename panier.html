@@ -62,7 +62,7 @@
                 <th scope="col"class="text-center">Produit</th>
                 <th scope="col" class="text-center" >Quantite</th>
                 
-                <th scope="col" class="text-center" >Prix unitaire</th>
+                <th scope="col" class="text-center" >Prix</th>
                 <!-- <th scope="col" class="text-center">Total</th> -->
               </tr>
             </thead>
@@ -96,40 +96,39 @@
           </div>
          
 
-        <form class="col-10 mx-auto my-5" >
+        <form class="col-10 mx-auto my-5">
             <div class="form-row">
               <div class="col-md-6 mb-3">
-                <label for="validationServer01">Prenom</label>
-                <input type="text" class="form-control " id="validationServer01" minlength="2" required>
-               
-                
+                <label for="validationDefault01">Prenom</label>
+                <input type="text" class="form-control " id="validationDefault01" minlength="2" required>
+              
               </div>
               <div class="col-md-6 mb-3">
-                <label for="validationServer02">Nom</label>
-                <input type="text" class="form-control" id="validationServer02" minlength="2" required>
+                <label for="validationDefault02">Nom</label>
+                <input type="text" class="form-control" id="validationDefault02" minlength="2" required>
                 
               </div>
             </div>
             <div class="form-row">
               <div class="col-12 mb-3">
-                <label for="validationServer03">Adresse</label>
-                <input type="text" class="form-control " id="validationServer06"  minlength="2" required>
+                <label for="validationDefault03">Adresse</label>
+                <input type="text" class="form-control " id="validationDefault03"  minlength="2" required>
                 
               </div>
               <div class="col-md-6 mb-3">
-                <label for="validationServer03">Ville</label>
-                <input type="text" class="form-control " id="validationServer03"  minlength="2" required>
+                <label for="validationDefault04">Ville</label>
+                <input type="text" class="form-control " id="validationDefault04"  minlength="2" required>
                 
               </div>
               
               <div class="col-md-3 mb-3">
-                <label for="validationServer05">Code postale</label>
-                <input type="number" class="form-control " id="validationServer04"  minlength="3" required>
+                <label for="validationDefault05">Code postale</label>
+                <input type="number" class="form-control " id="validationDefault05"  minlength="3" required>
                 
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationServer05">Pays</label>
-                <input type="text" class="form-control " id="validationServer05"  minlength="3" required>
+                <label for="validationDefault06">Pays</label>
+                <input type="text" class="form-control " id="validationDefault6"  minlength="3" required>
                 
               </div>
               
@@ -138,13 +137,13 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input type="email" class="form-control rounded-right" id="validationServerEmail" minlength="6" required>
+                <input type="email" class="form-control rounded-right" id="validationDefaultEmail" minlength="6" required>
                 
               </div>
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" required>
-                <label class="form-check-label" >
+                <input class="form-check-input " type="checkbox" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
                   accepter les termes et conditions
                 </label>
                 
@@ -152,7 +151,7 @@
             </div>
             <button class="btn btn-primary" type="submit" id="confirm">Paye ton ours</button>
           </form>
-       
+          
         <footer class="row ">
       
    

@@ -8,7 +8,8 @@ const price = document.querySelectorAll('.card-text')
 
 
 
-   // on  recupere les 3 rows pour effacer les 2 derniers et remplacer le premier par un par une phrase
+
+   // on  recupere les 3 rows pour effacer les 2 derniers et remplacer le premier par une phrase
 
 function errorMessage () {
 
@@ -22,32 +23,33 @@ function errorMessage () {
 
 
 
-
-fetch('http://localhost:3000/api/teddies') 
-    .then(res =>  {   
+function fetchTeddies(){
+    fetch('http://localhost:3000/api/teddies') //on fetch(requete a l'API qui envoit une requet GET par default
+        .then(res =>  {    //la methode then envoit une promesse de reponse(voir catch si pas de reponse)
         
-        if (res.ok){    
-            res.json().then(teddies =>{ 
+            if (res.ok){    //Si la reponse est un succes, c est a dire status entre 200 et 299
+                res.json().then(teddies =>{ //2eme promesse pour nous donner les data(appeles teddies) en format json
                 
-                for (let teddy in teddies){  // pour chaque teddy de l'ensemble des teddies
+                    for (let teddy in teddies){  // boucle pour chaque teddy de l'ensemble des teddies
                 
-                img[teddy].src = teddies[teddy].imageUrl  //1er teddy ds la premiere carte, 2eme ds la deuxieme...
+                    img[teddy].src = teddies[teddy].imageUrl  //1er teddy ds la premiere carte, 2eme ds la deuxieme...
                 
-                name[teddy].innerHTML = teddies[teddy].name
+                    name[teddy].innerHTML = teddies[teddy].name
                 
-                price[teddy].innerHTML = teddies[teddy].price +" pesos"
-                }
+                    price[teddy].innerHTML = teddies[teddy].price +" pesos"
+
+                    }
                 
-            })}
-        else { 
+                })}
+            else {       //Sinon (cas ou la reponse n est pas un succes) 
            
-            errorMessage() 
+                errorMessage() //la fonction remplace les fiches par message d'erreur au choix(voir au dessus)
            
-        }
-    })
-     .catch(err => {
+            }
+        })
+        .catch(err => { // la methode catch au cas ou la promesse de reponse est rejete pour pouvoir traiter la reponse
 
-        errorMessage()
-     })
-
-
+            errorMessage()
+        })
+    }
+fetchTeddies();  //On appel la fonction
