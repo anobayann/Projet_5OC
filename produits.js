@@ -39,10 +39,6 @@ function display(teddySelected) {
       colorsOption[color].innerHTML = teddySelected.colors[color]
     }
 
-
-
-
-
   
     // fonction qui envoi au local storage l'id, le nom et le prix au clic du bouton panier  
     button.addEventListener("click", function() {
@@ -52,7 +48,8 @@ function display(teddySelected) {
       addTeddy.push({ //on y push le teddy avec ces caraceristik
         _id: JSON.stringify(teddySelected._id), //3 champs de l obj
         name: JSON.stringify(teddySelected.name),
-        price: JSON.stringify(teddySelected.price)
+        price: JSON.stringify(teddySelected.price),
+        quantity: 1
       });
         // on ajoute la valeur (l objet(teddy)) a la cle(panier cart)
         localStorage.setItem('cart', JSON.stringify(addTeddy)) 
@@ -93,15 +90,14 @@ fetch('http://localhost:3000/api/teddies')
               })
       }
       else {
-      error()
+        throw "L'adresse URL de l'API est incorrect"
       }
       })
     .catch(err => {
+
+      console.error(err);
         error()
     })
-
-
-
 
     //PB message d'erreur trop long
 

@@ -11,7 +11,7 @@ function makeRow() {
               <option value="3">3</option>
           </select>
       </td>
-      <td class="text-center priceFor1"></td>
+      <td class="text-center priceOfTeddy"></td>
     </tr>  */
   
       const tableMother = document.querySelector('#tableMother')
@@ -24,24 +24,14 @@ function makeRow() {
       nameOfTeddy.setAttribute('scope', 'row');
       nameOfTeddy.classList.add('cart_name', 'text-center')
       const quantityOfTeddy = document.querySelector('#tableMother td')
-      quantityOfTeddy.appendChild(document.createElement('select'))
+      quantityOfTeddy.appendChild(document.createElement('input'))
       quantityOfTeddy.classList.add('text-center')
-      const selectTeddies = document.querySelector('#tableMother select')
-      selectTeddies.classList.add('custom-select', 'col-9', 'col-lg-6')
-      selectTeddies.appendChild(document.createElement('option'))
-      selectTeddies.appendChild(document.createElement('option'))
-      selectTeddies.appendChild(document.createElement('option'))
-      const option1 = document.querySelector('#tableMother option')
-      option1.classList.add('value=1')
-      const option2 = option1.nextElementSibling
-      const option3 = option2.nextElementSibling
-      option2.classList.add('value=2')
-      option3.classList.add('value=3')
-      option1.innerHTML = '1'
-      option2.innerHTML = '2'
-      option3.innerHTML = '3'
+      const inputQuantity = document.querySelector('#tableMother input')
+      inputQuantity.classList.add( 'col-9', 'col-lg-2', 'text-center')
+      inputQuantity.setAttribute('value', 1) 
+      
       const priceOfTeddy = quantityOfTeddy.nextElementSibling
-      priceOfTeddy.classList.add('priceFor1', 'text-center')
+      priceOfTeddy.classList.add('priceOfTeddy', 'text-center')
     
     }
 makeRow();
@@ -54,7 +44,7 @@ function addToCart(){
    
     for (let item in cart) { 
         const eachName = document.querySelectorAll(".cart_name")
-        const eachPrice = document.querySelectorAll(".priceFor1")
+        const eachPrice = document.querySelectorAll(".priceOfTeddy")
         const lastRow = document.querySelector("#tableMother").lastChild
         const clone = lastRow.cloneNode(true)
 
@@ -66,12 +56,17 @@ function addToCart(){
 }
 addToCart();
 
+function teddyPrice(){
+
+  
+
+}
 // Prix total
 function totalPrice(){
 
   const cart = JSON.parse(localStorage.getItem('cart'))
   let totalPrice = document.querySelector('#totalPrice')
-  let eachPrice = document.querySelectorAll(".priceFor1")
+  let eachPrice = document.querySelectorAll(".priceOfTeddy")
   let sum = 0
 
     for (let i in cart){
@@ -82,14 +77,14 @@ function totalPrice(){
  
       //multiplie les quantites et le prix unitaire
           
-      const teddyQuantity = document.querySelectorAll('.custom-select')
-      teddyQuantity[i].addEventListener("change", function(e) {
+      // const teddyQuantity = document.querySelectorAll('.custom-select')
+      // teddyQuantity[i].addEventListener("change", function(e) {
         
         
-        let newPrice = JSON.parse(e.target.value)*(JSON.parse(cart[i].price))
-            eachPrice[i].innerHTML = newPrice + ' pesos'  
+      //   let newPrice = JSON.parse(e.target.value)*(JSON.parse(cart[i].price))
+      //       eachPrice[i].innerHTML = newPrice + ' pesos'  
             
-          })         
+         // })         
         //comment additionner les nouvelles quantites??? eachPrice retourne nodeliste(object)
           console.log(JSON.stringify(eachPrice));
           
