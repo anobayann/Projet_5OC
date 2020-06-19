@@ -3,15 +3,10 @@ const teddyName = document.querySelector('#teddyName')
 const teddyDescription = document.querySelector('#teddyDescription')
 const teddyPrice = document.querySelector('#teddyPrice')
 const teddyPic = document.querySelector('#teddyPic')
+const teddyColors = document.querySelector('#teddyColors')
 const errorMessage = document.querySelector('.card')
 const button = document.querySelector('#btn')
 
-// on cree un array pour les couleurs du DOM
-const teddyColors = []
-teddyColors.push(document.querySelector('#color1')) //[0]
-teddyColors.push(document.querySelector('#color2')) //[1]
-teddyColors.push(document.querySelector('#color3')) //[2]
-teddyColors.push(document.querySelector('#color4')) //[3]
 
 function error(){
   errorMessage.innerHTML = "Nos articles sont indisponibles pour le moments, notre serveur est en maintenance pour vous offrir un meilleur service :D A bientot..";
@@ -27,15 +22,27 @@ function display(teddySelected) {
     teddyPrice.innerHTML = '<strong>PRIX</strong>: ' + teddySelected.price +" pesos"
     teddyPic.src = teddySelected.imageUrl
 
-    // boucle pour enlever les 'champs sans couleurs' et ajouter les couleurs de chacuns..
-    for (let i=0; i<4 ; i++ ){
-      if (!teddySelected.colors[i]) {
-         teddyColors[i].remove();
-         }
-      else {
-         teddyColors[i].innerHTML = teddySelected.colors[i]
-         }
+
+    //patxi methode
+    // recuperer elemt select
+    //vider le select
+    // ajouter les couleurs(boucle for ou foreach)
+
+    //my method
+    //on fai une boucle pour recuperer chaque couleur du teddy selectionne
+    //on lui fai un gosse par couleur (option)
+    //on ajoute les couleurs dans chaque gosses
+    for (let color in teddySelected.colors){
+
+      teddyColors.appendChild(document.createElement('option'))
+      let colorsOption = document.querySelectorAll('#teddyColors option')
+      colorsOption[color].innerHTML = teddySelected.colors[color]
     }
+
+
+
+
+
   
     // fonction qui envoi au local storage l'id, le nom et le prix au clic du bouton panier  
     button.addEventListener("click", function() {

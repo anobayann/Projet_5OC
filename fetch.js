@@ -41,14 +41,15 @@ function fetchTeddies(){
                     }
                 
                 })}
-            else {       //Sinon (cas ou la reponse n est pas un succes) 
-           
-                errorMessage() //la fonction remplace les fiches par message d'erreur au choix(voir au dessus)
+            else {       //Sinon (cas ou la reponse n est pas un succes) //throw exception
+                throw "L'adresse URL de l'API est incorrect"
+               //supp errorMessage() //la fonction remplace les fiches par message d'erreur au choix(voir au dessus)
            
             }
         })
         .catch(err => { // la methode catch au cas ou la promesse de reponse est rejete pour pouvoir traiter la reponse
-
+            console.error(err);
+            
             errorMessage()
         })
     }
