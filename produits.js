@@ -46,16 +46,22 @@ function display(teddySelected) {
       //on recupere ou on cree la cle 'cart' du localStorage 
       const addTeddy = JSON.parse(localStorage['cart'] || "[]");
       const qty = document.querySelector('#qty')
-
-      addTeddy.push({ //on y push le teddy avec ces caraceristik
+      let product = {
         _id: JSON.stringify(teddySelected._id), //3 champs de l obj
         name: JSON.stringify(teddySelected.name),
         price: JSON.stringify(teddySelected.price),
-        quantity: qty.value
+        quantity: parseInt(qty.value, 10)
         
-        
-      });
-      console.log(qty.value);
+      }
+        let exisisting = addTeddy.find(item => item._id == product._id)
+        if (exisisting){
+          exisisting.quantity += product.quantity
+        }
+        else{
+          addTeddy.push(product)
+        }
+     
+      console.log(typeof qty.value);
         // on ajoute la valeur (l objet(teddy)) a la cle(panier cart)
         localStorage.setItem('cart', JSON.stringify(addTeddy)) 
 
