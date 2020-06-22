@@ -1,24 +1,13 @@
 //Fonction pour confirmer l'achat
-function confirmOnClick(){ 
 
-    const confirmButton = document.querySelector('#confirm')
-    confirmButton.addEventListener("click", function(event){
-      event.preventDefault(); //sinon ca marche pas
-     
-      confirm();
-    })
-  }
-  confirmOnClick()
+  function sendToServer(){
   
-  function confirm(){
-
-    
-    const headers = { 'Accept': 'application/json', 'Content-Type': 'application/json'} //
-    const firstName = document.getElementById('validationDefault01').value
-    const lastName = document.getElementById('validationDefault02').value
-    const address = document.getElementById('validationDefault03').value
-    const city = document.getElementById('validationDefault04').value
-    const email = document.getElementById('validationDefaultEmail').value
+    const headers = {'Content-Type': 'application/json'} 
+    const firstName = document.getElementById('first_name').value
+    const lastName = document.getElementById('last_name').value
+    const address = document.getElementById('address').value
+    const city = document.getElementById('city').value
+    const email = document.getElementById('email').value
     const contact = {'firstName': firstName, 'lastName': lastName, 'address': address, 'city': city, 'email': email}
     const cart = JSON.parse(localStorage.getItem('cart'))
     let products = []
@@ -47,12 +36,23 @@ function confirmOnClick(){
                   alert("Veillez remplir tout les champs svp")
                  }
               })
-          .catch (function (error) {
+        .catch (function (error) {
               console.log('Request failed', error);
+        })
+}
+
+        
+function confirmOnClick(){ 
+
+          const confirmButton = document.querySelector('#confirm')
+          confirmButton.addEventListener("click", function(event){
+      
+            event.preventDefault(); //sinon ca marche pas
+            
+            sendToServer();
           })
         }
-
-
-
+    confirmOnClick()
+        
 
         
