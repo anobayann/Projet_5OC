@@ -2,8 +2,8 @@
 function confirmOnClick(){ 
 
     const confirmButton = document.querySelector('#confirm')
-    confirmButton.addEventListener("click", function(e){
-      e.preventDefault(); //sinon ca marche pas
+    confirmButton.addEventListener("click", function(event){
+      event.preventDefault(); //sinon ca marche pas
      
       confirm();
     })
@@ -44,7 +44,7 @@ function confirmOnClick(){
                    
                  }
                 else {
-                  alert("Le formulaire de contact est incorrect, essai encore")
+                  alert("Veillez remplir tout les champs svp")
                  }
               })
           .catch (function (error) {

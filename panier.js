@@ -24,11 +24,9 @@ function makeRow() {
       nameOfTeddy.setAttribute('scope', 'row');
       nameOfTeddy.classList.add('cart_name', 'text-center')
       const quantityOfTeddy = document.querySelector('#tableMother td')
-      quantityOfTeddy.appendChild(document.createElement('input'))
-      quantityOfTeddy.classList.add('text-center')
-      const inputQuantity = document.querySelector('#tableMother input')
-      inputQuantity.classList.add( 'input','col-9', 'col-lg-2', 'text-center')
-      inputQuantity.setAttribute('value', 1) 
+      quantityOfTeddy.classList.add('quantity', 'text-center')
+      
+      
       
       const priceOfTeddy = quantityOfTeddy.nextElementSibling
       priceOfTeddy.classList.add('priceOfTeddy', 'text-center')
@@ -45,9 +43,9 @@ function addToCart(){
     for (let item in cart) { 
       
         const eachName = document.querySelectorAll(".cart_name")
-        let eachPrice = document.querySelectorAll(".priceOfTeddy")
-        const eachQuantity = document.querySelectorAll(".input")
-        //const eachQuantity = document.querySelectorAll('.input')
+        const eachPrice = document.querySelectorAll(".priceOfTeddy")
+        const eachQuantity = document.querySelectorAll(".quantity")
+        
         const lastRow = document.querySelector("#tableMother").lastChild
         const clone = lastRow.cloneNode(true)
 
@@ -55,7 +53,7 @@ function addToCart(){
         eachName[item].innerHTML = JSON.parse(cart[item].name) // on y ajoute le nom
         
         eachPrice[item].innerHTML = JSON.parse((cart[item].price)*(cart[item].quantity)) + ' pesos' // on y ajoute le prix
-       // eachQuantity[item].innerHTML = JSON.parse(cart[item].quantity)
+        eachQuantity[item].innerHTML = JSON.parse(cart[item].quantity)
 
     }
             
@@ -69,32 +67,20 @@ addToCart();
 
    const cart = JSON.parse(localStorage.getItem('cart'))
    let totalPrice = document.querySelector('#totalPrice')
-   let eachPrice = document.querySelectorAll(".priceOfTeddy")
+   //let eachPrice = document.querySelectorAll(".priceOfTeddy")
+   let sum =0
    
+  for (let item in cart){
+    const pricePerTeddy = JSON.parse((cart[item].price)*(cart[item].quantity))
+    sum += pricePerTeddy
 
-    
-   for (let item in cart) {
- 
-    let sum = 0
-       input = document.querySelectorAll('.input')
-       input[item].addEventListener('input', function()
-       {
-        
-         //const addTeddy = JSON.parse(localStorage['cart'])
-         let cartObj = localStorage.getItem('cart')
-         let cart = JSON.parse(cartObj)
-         cart[item].quantity = input[item].value
-        
-        localStorage.setItem('cart', JSON.stringify(cart))
 
-        eachPrice[item].innerHTML = (cart[item].price)*(cart[item].quantity) + ' pesos'
-        let allPrice = (cart[item].price)*(cart[item].quantity)
-        
-        sum += allPrice
-        totalPrice.innerHTML = "Prix total = " + sum + " pesos"
-        
-   });
-           }}
+  }
+  totalPrice.innerHTML = "Prix total : " + sum + " pesos"
+  
+
+ }
+      
   
 
 totalPrice();
