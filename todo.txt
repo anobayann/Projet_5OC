@@ -1,9 +1,33 @@
+centrer tableau
 
+formulaire email message d erreur mettre en bas
 
-=> Prix total a la page de confirmation
+entourer en rouge error form
 
-=>Faire REGEX au formulaire
+validator html
+
+favicon title 
+
+indenter html
+
+verifier partie responsive
+
+import de fonction
+
+essayer d utiliser un affichage des liens dynamique page 1
+
+liens js html
+
+liens nav top 
+
+gitignore
 
 =>Faire plan test
 
 =>trier github
+
+kes ce ke fonction globale
+
+powerpoint 
+
+enlever jquery?
