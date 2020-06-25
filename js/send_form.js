@@ -37,57 +37,67 @@ function form_valid(e){
     else if (firstName.validity.valueMissing){
      
       firstNameMissing.textContent = "Prenom manquant"
-      firstNameMissing.style.color = "red";
+      firstNameMissing.style.color = "red"
+      firstName.style.border = "thin solid red"
     }
 
     else if(firstName.value.length < 2 || firstName.value.length > 20){
      
       firstNameMissing.textContent = "Le prenom doit contenir entre 2 et 20 lettres"
-      firstNameMissing.style.color = "darkorange";
+      firstNameMissing.style.color = "darkorange"
+      firstName.style.border = "thin solid darkorange"
     
     }
 
     else if (lastName.validity.valueMissing){
      
       lastNameMissing.textContent = "Nom manquant"
-      lastNameMissing.style.color = "red";
+      lastNameMissing.style.color = "red"
+      lastName.style.border = "thin solid red"
     }
     else if(lastName.value.length < 2 || lastName.value.length > 25){
      
       lastNameMissing.textContent = "Le nom doit contenir entre 2 et 20 lettres"
-      lastNameMissing.style.color = "darkorange";
+      lastNameMissing.style.color = "darkorange"
+      lastName.style.border = "thin solid darkorange"
     
     }
     else if (address.validity.valueMissing){
      
       addressMissing.textContent = "Adresse manquante"
-      addressMissing.style.color = "red";
+      addressMissing.style.color = "red"
+      address.style.border = "thin solid red"
     }
     else if(address.value.length < 6 ){
      
       addressMissing.textContent = "L'adresse doit contenir au moins 6 characteres"
-      addressMissing.style.color = "darkorange";
+      addressMissing.style.color = "darkorange"
+      address.style.border = "thin solid darkorange"
     
     }
     else if (city.validity.valueMissing){
      
       cityMissing.textContent = "Ville manquante"
-      cityMissing.style.color = "red";
+      cityMissing.style.color = "red"
+      city.style.border = "thin solid red"
     }
     else if(city.value.length < 2 || city.value.length > 35){
      
       cityMissing.textContent = "Le nom de la ville doit contenir entre 2 et 35 lettres maximum"
-      cityMissing.style.color = "darkorange";
+      cityMissing.style.color = "darkorange"
+      city.style.border = "thin solid darkorange"
     }
     else if (email.validity.valueMissing){
      
       emailMissing.textContent = "Adresse email manquante"
-      emailMissing.style.color = "red";
+      emailMissing.style.color = "red"
+      email.style.border = "thin solid red"
     }
     else if(emailRegex.test(email.value)== false){
      
       emailMissing.textContent = "Format incorrect"
-      emailMissing.style.color = "darkorange";
+      emailMissing.style.color = "darkorange"
+      email.style.border = "thin solid darkorange"
     }
     else{
       sendToServer()

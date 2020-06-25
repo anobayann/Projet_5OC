@@ -1,8 +1,9 @@
-centrer tableau
 
-formulaire email message d erreur mettre en bas
+change pdf
 
-entourer en rouge error form
+
+
+repetition send_form
 
 validator html
 
@@ -12,22 +13,12 @@ indenter html
 
 verifier partie responsive
 
-import de fonction
-
-essayer d utiliser un affichage des liens dynamique page 1
-
-liens js html
-
-liens nav top 
-
 gitignore
-
-=>Faire plan test
-
-=>trier github
 
 kes ce ke fonction globale
 
 powerpoint 
 
 enlever jquery?
+
+index.js
