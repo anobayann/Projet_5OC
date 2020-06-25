@@ -18,7 +18,7 @@ function makeRow() {
       nameOfTeddy.setAttribute('scope', 'row');
       nameOfTeddy.classList.add('cart_name', 'text-center')
       const quantityOfTeddy = document.querySelector('#tableMother td')
-      quantityOfTeddy.classList.add('quantity', 'text-center', "pl-5")
+      quantityOfTeddy.classList.add('quantity', 'text-center', "pl-sm-5")
       const priceOfTeddy = quantityOfTeddy.nextElementSibling
       priceOfTeddy.classList.add('priceOfTeddy', 'text-center')
     

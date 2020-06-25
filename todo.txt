@@ -1,17 +1,5 @@
-
 change pdf
 
-
-
-repetition send_form
-
-validator html
-
-favicon title 
-
-indenter html
-
-verifier partie responsive
 
 gitignore
 

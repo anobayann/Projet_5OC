@@ -1,117 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teddy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <!-- nav-->
-    <div class= "bg-dark ">
-    <header class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <nav class="navbar navbar-expand-lg navbar-dark  ">
-                    <a class="navbar-brand " href="../index.html">ORINOCO</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                  
-                    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
-                      <ul class="navbar-nav ml-auto">
-                        <li class="nav-item  ">
-                          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        
-                        <li class="nav-item dropdown active">
-                          <a class="nav-link dropdown-toggle" href="personaliser.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Produits
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="personaliser.html?_norbert">Teddy1</a>
-                            <a class="dropdown-item" href="personaliser.html?_arnold">Teddy2</a>
-                            <a class="dropdown-item" href="personaliser.html?_lenny-and-carl">Teddy3</a>
-                            <a class="dropdown-item" href="personaliser.html?_gustav">Teddy4</a>
-                            <a class="dropdown-item" href="personaliser.html?_garfunkel">Teddy5</a>
-                            
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="panier.html">Panier</a>
-                          </li>
-                       
-                      </ul>
-                      
-                    </div>
-                </nav>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Teddy</title>
+      <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="../style.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
+   </head>
+   <body>
+      <!-- nav-->
+      <div class= "bg-dark ">
+         <header class="container-fluid">
+            <div class="row">
+               <div class="col">
+                  <nav class="navbar navbar-expand-lg navbar-dark  ">
+                     <a class="navbar-brand " href="../index.html">ORINOCO</a>
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                           <li class="nav-item  ">
+                              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li class="nav-item dropdown active">
+                              <a class="nav-link dropdown-toggle" href="personaliser.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Produits
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                 <a class="dropdown-item" href="personaliser.html?_norbert">Teddy1</a>
+                                 <a class="dropdown-item" href="personaliser.html?_arnold">Teddy2</a>
+                                 <a class="dropdown-item" href="personaliser.html?_lenny-and-carl">Teddy3</a>
+                                 <a class="dropdown-item" href="personaliser.html?_gustav">Teddy4</a>
+                                 <a class="dropdown-item" href="personaliser.html?_garfunkel">Teddy5</a>
+                              </div>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="panier.html">Panier</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
             </div>
-        </div>
-    </header>
-</div>
-<div class="container">
-    <div class="row mt-5 mb-3 mb-sm-5 justify-content-center text-center ">
-        <div class="col-10">
-        <h1 class="sous-titre sous-titre--page2 "> Personaliser votre ours en peluche</h1>    
-    </div>
-    </div>
-    <div class="row">     
-            
-                <div class="card mx-auto col-10 col-lg-9 pb-4 mb-5">
-    
-                    <img src="" class="card-img-top" id="teddyPic"  alt="photo du teddy" >
-                    <div class="card-body ">
-                        <p class="card-title py-2 p-sm-4" id="teddyName">NAME : machin</p>
-                        <p class="card-text py-2 p-sm-4" id="teddyDescription">DESCRIPTION : surprise</p>
-                        <p class="card-text py-2 p-sm-4" id="teddyPrice">PRIX : 1euro</p>
-                        <div class="py-2 p-sm-4">
-                        
-                          <label class=" pr-sm-3" ><strong>Quantite</strong></label>
-                        <select class="custom-select col-2" id="qty">
-                          
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-
-                        </select>
-                        
-                      </div>
-                        <div class="row justify-content-sm-between py-2 p-sm-4">
-                          <div class="col-12">
-                          <label class=" pr-sm-3" ><strong>Couleurs</strong></label>
-                          <select class="custom-select col-xs-10  col-sm-3 mb-5 mb-sm-0 " id="teddyColors">
-                          </div>
-                            
-
-                            
-                          </select>
-                          
-                          <a class="btn btn-info float-sm-right " href="panier.html" role="button" id="btn">Ajouter au panier</a>
-                        
-                        </div> 
-                    </div>
-                   
-                </div>
-            
-        </div>
-    </div>
-</div>
-    
-    
-        
-    
-    
-    <script type="text/javascript" src="../js/produits.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
+         </header>
+      </div>
+      <div class="container">
+         <div class="row mt-5 mb-3 mb-sm-5 justify-content-center text-center ">
+            <div class="col-10">
+               <h1 class="sous-titre sous-titre--page2 "> Personaliser votre ours en peluche</h1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="card mx-auto col-10 col-lg-9 pb-4 mb-5">
+               <img src="img" class="card-img-top" id="teddyPic"  alt="photo du teddy" >
+               <div class="card-body ">
+                  <p class="card-title py-2 p-sm-4" id="teddyName">NAME : machin</p>
+                  <p class="card-text py-2 p-sm-4" id="teddyDescription">DESCRIPTION : surprise</p>
+                  <p class="card-text py-2 p-sm-4" id="teddyPrice">PRIX : 1euro</p>
+                  <div class="py-2 p-sm-4">
+                     <label class=" pr-sm-3" ><strong>Quantite</strong></label>
+                     <select class="custom-select col-sm-2" id="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                     </select>
+                  </div>
+                  <div class="row justify-content-sm-between py-2 p-sm-4">
+                     <div class="col-12">
+                        <label class=" pr-sm-3" ><strong>Couleurs</strong></label>
+                        <select class="custom-select col-xs-10  col-sm-3 mb-5 mb-sm-0 " id="teddyColors">
+                        </select>                    
+                     <a class="btn btn-info float-sm-right ml-0 " href="panier.html" role="button" id="btn">Ajouter au panier</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="../js/produits.js"></script>
+   </body>
 </html>

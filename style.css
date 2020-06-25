@@ -29,6 +29,9 @@
 .thead{
     background-color: #17a2b8;
 }
+.orinoco{
+    width: 10rem;
+}
 
 @media (min-width: 768px) { 
     .sous-titre{
